@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: linear-gradient(
+    to bottom,
+    hsl(273, 75%, 66%),
+    hsl(240, 73%, 65%)
+  );
+}
+
+.container {
+  /* width: 1440px; */
+  height: 100vh;
+  position: relative;
+}
+
+.box {
+  position: absolute;
+  top: 6.5rem;
+  left: 1.75rem;
+}
+
+.illustration-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  grid-template-rows: 1fr;
+  height: 80%;
+  max-width: 80%;
+  margin: 10% 10%;
+  background-color: white;
+  border-radius: 2rem;
+}
+
+.images {
+  grid-row: span 1;
+  grid-column: span 1;
+  overflow: hidden;
+}
+
+.images .woman {
+  margin-left: -1.5rem;
+  margin-top: 4rem;
+}
+
+.images .box {
+  margin-left: -1.5rem;
+  margin-top: 4rem;
+}
+
+.faq {
+  grid-row: span 1;
+  grid-column: span 1;
+  font-size: 12px;
+  margin-top: 5rem;
+  margin-right: 1rem;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+/* .down-arrow {
+  height: 20px;
+  cursor: pointer;
+} */
+
+button.accordion {
+  font-family: inherit;
+  width: 100%;
+  background-color: whitesmoke;
+  border: none;
+  outline: none;
+  text-align: left;
+  padding: 15px 20px;
+  /* font-size: 18px; */
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+  font-weight: 700;
+}
+
+button.accordion::after {
+  content: "\22B3";
+  font-family: "fontawesome";
+  font-size: 14px;
+  float: right;
+}
+
+button.accordion.toggle:after {
+  content: "\2228";
+}
+
+button.accordion:hover,
+button.accordion.toggle {
+  background-color: #ddd;
+}
+
+.answer {
+  background-color: white;
+  font-family: inherit;
+  border-left: 1px solid whitesmoke;
+  border-right: 1px solid whitesmoke;
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+  font-weight: 400;
+}
+
+@media (max-width: 1100px) {
+  .illustration-box {
+    height: 90%;
+    /* overflow-y: hidden; */
+  }
+
+  .faq {
+    max-height: 70%;
+    margin-top: 0rem;
+  }
+
+  .box {
+    width: 5rem;
+    left: 2.25rem;
+    transform: translateX(55%);
+  }
+
+  .images .woman {
+    height: 18rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .box {
+    top: -0.25rem;
+    left: 3.5rem;
+    height: 6rem;
+  }
+
+  .illustration-box {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 20%;
+    height: 80%;
+    gap: 1rem;
+    grid-template-rows: 1fr 2fr;
+  }
+
+  .faq {
+    grid-row: span 1;
+    grid-column: span 1;
+    margin-top: 0rem;
+    margin-left: 1rem;
+  }
+
+  .images {
+    grid-row: span 1;
+    grid-column: span 1;
+    overflow: visible;
+    margin: 0 auto;
+  }
+
+  .images .woman {
+    height: 12.75rem;
+    margin-top: -5.5rem;
+    /* margin-left: 2.5em;
+    margin-right: 2.5em; */
+    /* margin: auto; */
+    /* justify-content: center;
+    align-items: center; */
+  }
+}

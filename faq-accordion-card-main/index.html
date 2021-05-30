@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    .answer {
+  background-color: white;
+  border-left: 1px solid whitesmoke;
+  border-right: 1px solid whitesmoke;
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <img class="box" src="./images/illustration-box-desktop.svg" alt="box" >
+    </div>
+    <div class="illustration-box">
+      <div class="images">
+        <img class="woman" src="./images/illustration-woman-online-desktop.svg" alt="woman-desktop" >
+      </div>
+      <div class="faq">
+        <button class="accordion">
+          How many team members can I invite?
+        </button>
+        <div class="answer">
+          <p>You can invite up to 2 additional users on the Free plan. There is no limit on 
+            team members for the Premium plan.</p>
+        </div>
+
+        <button class="accordion">
+          How do I reset my password?
+        </button>
+        <div class="answer">
+          <p>A reset link will be emailed to you.</p>
+        </div>
+
+        <button class="accordion">
+          Can I cancel my subscription?
+        </button>
+        <div class="answer">
+          <p>Yes! Send us a message and we’ll process your request no questions asked.</p>
+        </div>
+
+        <button class="accordion">
+          Do you provide additional support?
+        </button>
+        <div class="answer">
+          <p>Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+        </div>     
+
+      
+      </div>
+    </div>
+
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  
+<!-- Content ends here -->
+
+  <script>
+    let accordion = document.getElementsByClassName("accordion");
+    let i;
+
+for (i = 0; i < accordion.length; i++) {
+  accordion[i].onclick = function() {
+    this.classList.toggle('toggle');
+ 
+    var answer = this.nextElementSibling;
+    if (answer.style.maxHeight) {
+      // accordion is currently open, so close it
+      answer.style.maxHeight = null;
+    } else {
+      // accordion is currently closed, so open it
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+}
+  </script>
+</body>
+</html>
